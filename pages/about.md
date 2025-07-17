@@ -18,22 +18,44 @@ padding: 6em
 # Look in _includes/feature for options to easily add features to the page
 ---
 
-## About CollectionBuilder CSV
+## About This Collection
 
-This demo collection features items from the University of Idaho Library's [Digital Collections](https://www.lib.uidaho.edu/digital/), and is build using [CollectionBuilder-CSV](https://github.com/CollectionBuilder/collectionbuilder-csv).
 
-CollectionBuilder-CSV is a "Stand Alone" template for creating digital collection and exhibit websites using Jekyll, given:
+Welcome to the EchoReads Digital Library (Visit EchoReads), an innovative platform dedicated to making reading more interactive and accessible for children, parents, and educators. EchoReads is designed to promote literacy and engagement through a curated collection of free and open-access children’s books, interactive learning resources, and multimedia content.
 
-- a CSV of collection metadata
-- a folder of images, PDFs, audio, or video files
+This collection is built using CollectionBuilder-CSV, a static site generator for digital collections powered by Jekyll. It uses:
 
-Driven by your collection metadata, the template generates engaging visualizations to browse and explore your objects.
-The resulting static site can be hosted on any basic web server.
+A metadata CSV file to describe and organize collection items
 
-[CollectionBuilder](https://github.com/CollectionBuilder/) is an set of open source tools for creating digital collection and exhibit websites that are driven by metadata and powered by modern static web technology.
-See [CB Docs](https://collectionbuilder.github.io/cb-docs/) for detailed information.
+A folder of digital objects including images, PDFs, and multimedia files
+
+With this metadata-driven approach, EchoReads provides intuitive browsing, visualizations, and search capabilities, making it easy for users to explore our growing collection of stories and educational resources.
+
+Purpose of EchoReads
+EchoReads aims to:
+
+- Foster a love for reading among children through free, high-quality stories
+
+- Provide interactive learning experiences using AR features and gamified elements
+
+- Support open access and community-driven content by using Creative Commons and public domain resources
+
+Types of Materials
+Our collection includes:
+
+- Children’s Storybooks in multiple formats (PDF, HTML)
+
+- Illustrated Picture Books for early readers
+
+- Interactive “Read & Play” Stories with AR enhancements
+
+- Educational Activities and Learning Aids
+
+Access and Licensing
+EchoReads curates materials from trusted open-access sources such as StoryWeaver, Project Gutenberg, and Free Kids Books. Most items are available under Creative Commons licenses or public domain, ensuring free use for educational and personal purposes.
+
+Please review individual item metadata for specific licensing details.
 
 {% include feature/image.html objectid="demo_001" width="75" %} 
 
-<!-- IMPORTANT!!! DELETE this comment and the include below when you are finished editing this page for your collection. The include below introduces about page features. They will show up on your collection's about page until you delete it.  -->
-{% include cb/about_the_about.md %} 
+
