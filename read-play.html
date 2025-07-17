@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎈 Read & Play - EchoReads</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <script src="https://code.responsivevoice.org/responsivevoice.js?key=VaHvFjhq"></script>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(to bottom, #fff8f0, #ffe5ec);
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      color: #333;
+    }
+
+    .topbar {
+      background-color: #ffb997;
+      color: white;
+      padding: 8px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+
+    .topbar a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+    }
+
+    nav {
+      background-color: #ff9f9f;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: white;
+      gap: 10px;
+    }
+
+    nav .logo img {
+      height: 36px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a.readplay {
+      background-color: #ffd6a5;
+      color: #181825;
+      font-weight: 700;
+    }
+
+    nav ul li a.readplay:hover {
+      background-color: #ffb997;
+      color: white;
+    }
+
+    h1 {
+      color: #ff6f61;
+      font-size: 2.5rem;
+      padding: 2rem 1rem 0;
+      text-align: center;
+      animation: popIn 1s ease;
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .section {
+      margin: 2rem auto;
+      padding: 1.5rem;
+      width: 90%;
+      max-width: 600px;
+      border: 3px dashed #ffc107;
+      border-radius: 20px;
+      background-color: #fff3cd;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      text-align: center;
+    }
+
+    .section:hover {
+      transform: scale(1.02);
+    }
+
+    button {
+      padding: 1rem;
+      margin: 0.5rem;
+      font-size: 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      border: none;
+      background: #ffd6a5;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background: #ffb997;
+      transform: scale(1.05);
+    }
+
+    #story-display, #badge-status, #buddy-display {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      background: #fefae0;
+      padding: 1rem;
+      border-radius: 1rem;
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    #buddy-image {
+      font-size: 4rem;
+      margin-top: 1rem;
+    }
+
+    #story-image {
+      width: 100%;
+      max-width: 400px;
+      margin: 1rem auto;
+      border-radius: 10px;
+      animation: fadeInZoom 1.5s ease;
+    }
+
+    @keyframes fadeInZoom {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .bounce {
+      animation: bounce 0.6s ease;
+    }
+
+    .accessory {
+      font-size: 1.5rem;
+      margin-left: 8px;
+    }
+
+    footer {
+      background-color: #ff9f9f;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div><span>📅 Open: Mon–Fri, 9am–6pm</span></div>
+    <div>
+      <a href="mailto:info@echoreads.my">✉️ info@echoreads.my</a>
+      <a href="tel:+60123456789">📞 +60 12 345 6789</a>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <img src="logo.png" alt="EchoReads logo" />
+      <span>EchoReads</span>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="library.html">Library</a></li>
+      <li><a href="modules.html">Modules</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="offline.html">Offline</a></li>
+      <li><a href="help.html">Help</a></li>
+      <li><a href="read-play.html" class="readplay">🎈 Read & Play</a></li>
+    <li><a href="https://irfanhakimics.github.io/echoreadscsv/" target="_blank"> Collection</a></li>
+    </ul>
+  </nav>
+
+  <h1>📚 Welcome to EchoReads Kids Digital Library!</h1>
+
+  <!-- Background Music -->
+  <audio id="bg-music" loop autoplay>
+    <source src="https://cdn.pixabay.com/download/audio/2023/03/06/audio_7e1d31f05c.mp3?filename=playful-kids-142078.mp3" type="audio/mpeg">
+  </audio>
+  <button onclick="toggleMusic()">🔊 Toggle Music</button>
+
+  <!-- Storytime -->
+  <div class="section">
+    <h2>🎤 Interactive Storytime</h2>
+    <p>Choose a magical narrator to read your story:</p>
+    <button onclick="readStory('robot')">🤖 Robot</button>
+    <button onclick="readStory('fairy')">🧚 Fairy</button>
+    <button onclick="readStory('pirate')">🏴‍☠ Pirate</button>
+
+    <div style="margin-top: 1rem;">
+      <textarea id="custom-story" rows="4" placeholder="✍️ Type your own story..." style="width: 100%; max-width: 500px; padding: 10px; font-family: inherit; border-radius: 10px; margin-bottom: 10px;"></textarea><br>
+      <button onclick="readCustomStory()">📖 Read My Story</button>
+      <button onclick="togglePause()">⏸️ Pause / Resume</button>
+    </div>
+
+    <img id="story-image" src="https://cdn.pixabay.com/photo/2017/01/31/13/14/fairy-tale-2021224_1280.png" alt="Story scene">
+    <div id="story-display">"Once upon a time, in a land far away..."</div>
+  </div>
+
+  <!-- Reading Quest -->
+  <div class="section">
+    <h2>🏆 Reading Quest</h2>
+    <p>Earn badges as you read your way through magical worlds!</p>
+    <ul style="list-style: none; padding: 0;">
+      <li>📘 5 Fairy Tales – <strong>‘Fairy Friend’ Badge</strong></li>
+      <li>🐉 3 Adventures – <strong>‘Brave Reader’ Badge</strong></li>
+      <li>🌍 2 Non-Fiction – <strong>‘Explorer’ Badge</strong></li>
+    </ul>
+    <button onclick="unlockBadge()">✅ Mark Book as Read</button>
+    <div id="badge-status">Current Badge: None</div>
+  </div>
+
+  <!-- Reading Buddy -->
+<div class="section">
+  <h2>🐾 Your Reading Buddy</h2>
+  <p>Pick a buddy to cheer you on!</p>
+  <button onclick="setBuddy('cat')">🐱 Cat</button>
+  <button onclick="setBuddy('dog')">🐶 Dog</button>
+  <button onclick="setBuddy('dragon')">🐉 Dragon</button>
+  <div id="buddy-display">Your buddy: None</div>
+  <div id="buddy-image"></div>
+  <div id="buddy-accessory"></div>
+</div>
+
+<!-- AR Surprise -->
+<div class="section">
+  <h2>📸 AR Surprise!</h2>
+  <p>Scan this special image at our kiosk or try the AR experience now!</p>
+  <a href="ar.html" style="text-decoration: none;">
+    <img src="marker.png" alt="AR Marker" style="max-width: 300px; width: 90%; border-radius: 12px; margin-top: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <p style="margin-top: 0.5rem; font-weight: bold; color: #ff6f61;">👉 Tap to Launch AR!</p>
+  </a>
+</div>
+
+
+  <footer>
+    &copy; 2025 EchoReads. Built by CDIM2446A (UiTM).
+  </footer>
+
+  <script>
+    const storyText = "Once upon a time, a little girl found a talking frog in her garden. They went on a magical journey to the Moon where they met a singing star.";
+
+    let currentVoice = "UK English Female";
+    let lastNarration = "";
+    let paused = false;
+    let readCount = 0;
+
+    function readStory(type) {
+      lastNarration = storyText;
+      if (type === "robot") currentVoice = "UK English Male";
+      else if (type === "pirate") currentVoice = "US English Male";
+      else currentVoice = "UK English Female";
+
+      responsiveVoice.speak(storyText, currentVoice, {
+        rate: type === "pirate" ? 0.8 : 1,
+        pitch: type === "fairy" ? 1.5 : type === "robot" ? 0.9 : 1,
+        volume: 1
+      });
+
+      document.getElementById("story-display").textContent = `Narrated by ${type.toUpperCase()}: ${storyText}`;
+    }
+
+    function readCustomStory() {
+      const input = document.getElementById("custom-story").value.trim();
+      if (!input) return alert("Please type a story first!");
+
+      lastNarration = input;
+      responsiveVoice.speak(input, currentVoice || "UK English Female");
+      document.getElementById("story-display").textContent = `Narrated: ${input}`;
+    }
+
+    function togglePause() {
+      if (responsiveVoice.isPlaying()) {
+        responsiveVoice.pause();
+        paused = true;
+      } else if (paused) {
+        responsiveVoice.resume();
+        paused = false;
+      }
+    }
+
+    function unlockBadge() {
+      const sfx = new Audio("https://cdn.pixabay.com/download/audio/2022/03/15/audio_36c350f28b.mp3?filename=correct-2-46134.mp3");
+      sfx.play();
+      readCount++;
+
+      let badge = 'None';
+      let accessory = '';
+
+      if (readCount >= 5) {
+        badge = 'Fairy Friend 🧚';
+        accessory = '🎓';
+      } else if (readCount >= 3) {
+        badge = 'Brave Reader 🐉';
+        accessory = '🕶️';
+      } else if (readCount >= 2) {
+        badge = 'Explorer 🌍';
+        accessory = '🎒';
+      }
+
+      document.getElementById("badge-status").textContent = `Current Badge: ${badge}`;
+      if (accessory) {
+        document.getElementById("buddy-accessory").innerHTML = `<span class="accessory">+ ${accessory}</span>`;
+        document.getElementById("buddy-image").classList.add("bounce");
+        setTimeout(() => document.getElementById("buddy-image").classList.remove("bounce"), 600);
+      }
+    }
+
+    function setBuddy(animal) {
+      const emoji = animal === 'cat' ? '🐱' : animal === 'dog' ? '🐶' : '🐉';
+      const sfx = new Audio("https://cdn.pixabay.com/download/audio/2022/03/15/audio_87f2976592.mp3?filename=click-124467.mp3");
+      sfx.play();
+
+      document.getElementById("buddy-display").textContent = `Your buddy: ${animal.toUpperCase()}`;
+      const buddyEl = document.getElementById("buddy-image");
+      buddyEl.textContent = emoji;
+      buddyEl.classList.add("bounce");
+
+      setTimeout(() => buddyEl.classList.remove("bounce"), 600);
+      document.getElementById("buddy-accessory").textContent = '';
+    }
+
+    function toggleMusic() {
+      const music = document.getElementById("bg-music");
+      music.paused ? music.play() : music.pause();
+    }
+  </script>
+</body>
+</html>
